@@ -1,0 +1,25 @@
+.rocket-bit {
+    position: absolute;
+    margin-left: 15%;
+    display: inline-block;
+    
+}
+
+.bit-top {
+    visibility: hidden;
+    z-index: 1;
+}
+
+.bit-middle {
+    visibility: hidden;
+    z-index: 2;
+}
+
+.bit-bottom {
+    visibility: hidden;
+    z-index: 3;
+}
+
+.first-bit {
+    visibility: visible;
+}
