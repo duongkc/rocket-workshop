@@ -1,5 +1,9 @@
-const STAR_COUNT = 100,
-      STAR_SIZE = 3,
+/**
+ * Original code can be found at: https://codepen.io/hakimel/pen/bzrZGo
+ * 
+ */
+const STAR_COUNT = (( $('.con-container').width() + $(".con-container").height() ) / 8),
+      STAR_SIZE = 5,
       STAR_MIN_SCALE = 0.2,
       OVERFLOW_THRESHOLD = 50;
 
@@ -24,10 +28,6 @@ resize();
 step();
 
 window.onresize = resize;
-// canvas.onmousemove = onMouseMove;
-// canvas.ontouchmove = onTouchMove;
-// canvas.ontouchend = onMouseLeave;
-// document.onmouseleave = onMouseLeave;
 
 function generate() {
 
