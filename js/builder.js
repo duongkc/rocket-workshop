@@ -9,6 +9,7 @@ $(document).ready(function() {
                 i++;
                 console.log(i)
                 showNextPart();
+                updatePrice();
             };
 
             this.Previous = function () {
@@ -16,6 +17,7 @@ $(document).ready(function() {
                 i--;
                 console.log(i)
                 showPreviousPart();
+                updatePrice();
             };
 
             function hideCurrentPart() {
@@ -41,6 +43,11 @@ $(document).ready(function() {
                     }
                     parts[i].style.visibility = "visible";
                 }
+            }
+
+            function updatePrice(){
+                var newPrice = parseFloat(document.getElementById("totalPriceValue").innerHTML) + 10;
+                document.getElementById("totalPriceValue").innerHTML = newPrice;
             }
         }
     }
