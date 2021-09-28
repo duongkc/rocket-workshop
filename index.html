@@ -102,28 +102,34 @@
             </div>
         </li>
     </ul>
-    <div id="rocket_container" class="item-div">
-      Your selected rocket:
-        <div class="rocket-top">
-            <img class="rocket-bit bit-top first-bit" id="rocket_top1" src="img/A1.png" />
-            <img class="rocket-bit bit-top" id="rocket_top2" src="img/A2.png" />
-            <img class="rocket-bit bit-top" id="rocket_top3" src="img/A3.png" />
-          </div>
-          <div class="rocket-middle">
-            <img class="rocket-bit bit-middle first-bit" id="rocket_mid1" src="img/B1.png" />
-            <img class="rocket-bit bit-middle" id="rocket_mid2" src="img/B2.png" />
-            <img class="rocket-bit bit-middle" id="rocket_mid3" src="img/B3.png" />
-          </div>
-          <div class="rocket-bottom">
-            <img class="rocket-bit bit-bottom first-bit" id="rocket_bot1" src="img/C1.png" />
-            <img class="rocket-bit bit-bottom" id="rocket_bot2" src="img/C2.png" />
-            <img class="rocket-bit bit-bottom" id="rocket_bot3" src="img/C3.png" />
+    <h1>Your selected rocket:</h1>
+    <div class="con-container">
+        <canvas></canvas>
+        <div id="rocket_container">
+              <div class="rocket-top">
+                  <img class="rocket-bit bit-top first-bit" id="rocket_top1" src="img/A1.png" />
+                  <img class="rocket-bit bit-top" id="rocket_top2" src="img/A2.png" />
+                  <img class="rocket-bit bit-top" id="rocket_top3" src="img/A3.png" />
+                </div>
+                <div class="rocket-middle">
+                  <img class="rocket-bit bit-middle first-bit" id="rocket_mid1" src="img/B1.png" />
+                  <img class="rocket-bit bit-middle" id="rocket_mid2" src="img/B2.png" />
+                  <img class="rocket-bit bit-middle" id="rocket_mid3" src="img/B3.png" />
+                </div>
+                <div class="rocket-bottom">
+                  <img class="rocket-bit bit-bottom first-bit" id="rocket_bot1" src="img/C1.png" />
+                  <img class="rocket-bit bit-bottom" id="rocket_bot2" src="img/C2.png" />
+                  <img class="rocket-bit bit-bottom" id="rocket_bot3" src="img/C3.png" />
+                </div>
           </div>
     </div>
+
 
     <div id="totalPriceText"> The total price of your selected rocket is: €<text id="totalPriceValue">1000000<text/> </div>
     <button id="orderButton" onclick="order()"> Order </button>
 
+    
+    <script src="js/stars.js"></script>
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
   </body>

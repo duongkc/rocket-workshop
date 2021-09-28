@@ -7,14 +7,12 @@ $(document).ready(function() {
             this.Next = function () {
                 hideCurrentPart();
                 i++;
-                console.log(i)
                 showNextPart();
             };
 
             this.Previous = function () {
                 hideCurrentPart();
                 i--;
-                console.log(i)
                 showPreviousPart();
             };
 
