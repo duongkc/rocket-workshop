@@ -23,3 +23,22 @@
 .first-bit {
     visibility: visible;
 }
+
+.item-img{
+    width:200px; 
+    height: 200px;
+}
+
+.item-div{
+    float: left;
+    height: 75px;
+    width: 10%;
+    padding: 0 10px; 
+}
+
+.item-li{
+    float: left;
+    width: 100%;
+    height: 100px;
+}
+
