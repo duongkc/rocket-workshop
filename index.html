@@ -26,35 +26,84 @@
     <h1>Welcome to the Rocket Factory</h1>
 
     <ul>
-        <li>
+        <li class="item-li">
+            <div class="item-div" style="width: 5%;">
             <button class="btn btn-primary" id="prev_top_button" type="button">
                 <i class="fas fa-angle-left"></i>
             </button>
+            </div>
+            <div id="yellowTopDiv" class="item-div" style="border: 1px black solid">
+            Yellow top <br>
+            €100,000
+            </div>
+            <div id="redTopDiv" class="item-div">
+            Red top <br>
+            €250,000
+            </div> 
+            <div id="blueTopDiv" class="item-div">
+            Blue top <br>
+            €50,000
+            </div>
+            <div class="item-div" style="width: 10%;">
             <button class="btn btn-primary" id="next_top_button" type="button">
                 <i class="fas fa-angle-right"></i>
             </button>
             Top
-        </li>
-        <li>
+            </div>
+        </li> 
+        <li class="item-li"> 
+            <div class="item-div" style="width: 5%;">
             <button class="btn btn-primary" id="prev_middle_button" type="button">
                 <i class="fas fa-angle-left"></i>
             </button>
+          </div>
+            <div id="yellowMiddleDiv" class="item-div" style="border: 1px black solid">
+              Grey middle <br>
+              €500,000
+              </div>
+              <div id="redMiddleDiv" class="item-div">
+              green/yellow middle <br>
+              €750,000
+              </div> 
+              <div id="blueMiddleDiv" class="item-div">
+              Blue/red middle <br>
+              €350,000
+              </div>
+              <div class="item-div" style="width: 10%;">
             <button class="btn btn-primary" id="next_middle_button" type="button">
                 <i class="fas fa-angle-right"></i>
             </button>
             Middle
+            </div>
         </li>
-        <li>
+        <li class="item-li">
+          <div class="item-div" style="width: 5%;">
             <button class="btn btn-primary" id="prev_bottom_button" type="button">
                 <i class="fas fa-angle-left"></i>
             </button>
+          </div>
+          <div id="yellowBottomDiv" class="item-div" style="border: 1px black solid">
+            Yellow bottom <br>
+            €400,000
+            </div>
+            <div id="redBottomDiv" class="item-div">
+            Red bottom <br>
+            €500,000
+            </div> 
+            <div id="blueBottomDiv" class="item-div">
+            Blue bottom <br>
+            €250,000
+            </div>
+            <div class="item-div" style="width: 10%;">
             <button class="btn btn-primary" id="next_bottom_button" type="button">
                 <i class="fas fa-angle-right"></i>
             </button>
             Bottom
+            </div>
         </li>
     </ul>
-    <div id="rocket_container">
+    <div id="rocket_container" class="item-div">
+      Your selected rocket:
         <div class="rocket-top">
             <img class="rocket-bit bit-top first-bit" id="rocket_top1" src="img/A1.png" />
             <img class="rocket-bit bit-top" id="rocket_top2" src="img/A2.png" />
@@ -72,6 +121,8 @@
           </div>
     </div>
 
+    <div id="totalPriceText"> The total price of your selected rocket is: €<text id="totalPriceValue">1000000<text/> </div>
+    <button id="orderButton" onclick="order()"> Order </button>
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
