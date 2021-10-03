@@ -2,7 +2,7 @@
  * Original code can be found at: https://codepen.io/hakimel/pen/bzrZGo
  * 
  */
-const STAR_COUNT = (( $('.con-container').width() + $(".con-container").height() ) / 8),
+const STAR_COUNT = (( $('.space-container').width() + $(".space-container").height() ) / 8),
       STAR_SIZE = 5,
       STAR_MIN_SCALE = 0.2,
       OVERFLOW_THRESHOLD = 50;
