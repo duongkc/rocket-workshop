@@ -87,9 +87,7 @@ canvas {
     z-index: 3;
 }
 
-.first-bit {
-    visibility: visible;
-}
+
 
 
 /* selection buttons */
@@ -101,10 +99,12 @@ canvas {
 } */
 
 .item-div{
-    float: left;
+    position: absolute;
+    /* float: left; */
     height: 75px;
-    width: 20%;
-    padding: 0 10px; 
+    /* width: 20%; */
+    padding: 0 10px;
+    visibility: hidden; 
 }
 
 .item-li{
@@ -114,10 +114,21 @@ canvas {
     display: inline;
 }
 
-.prev-div {
+/* .prev-div {
     width: 10%;
 }
 
 .next-div {
     width: 25%;
+} */
+
+/* .items {
+    position: absolute;
+} */
+.option-rows {
+    margin: 2rem auto;
+}
+
+.selected {
+    visibility: visible;
 }
