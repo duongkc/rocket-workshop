@@ -40,6 +40,7 @@ canvas {
     margin: auto;
     /* overflow:hidden; */
     animation: spaceship 2s linear infinite;
+    
 }
 
 @keyframes spaceship {
