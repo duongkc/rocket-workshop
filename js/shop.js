@@ -1,6 +1,3 @@
-function sayHello(){
-    console.log("Hellooo")
-}
 var totalPrice = 0;
 var topIndex = 0;
 var middleIndex = 0;
