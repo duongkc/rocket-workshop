@@ -1,0 +1,48 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,700&display=swap'); */
+/* :root {
+    --primaryColor: #f09d51;
+    --mainWhite: #fff;
+    --mainBlack: rgb#222;
+    --mainGrey: #ececec;
+    --mainSpacing: 0.1rem;
+    --mainTransition: all 0.3s linear;
+  } */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    color: var(--mainBlack);
+    background: var(--mainWhite);
+    /* font-family: "Lato", sans-serif; */
+}
+
+.nav-icon {
+    color: #fff;
+    /* font-size: 1.5rem; */
+}
+.cart-btn {
+    position: relative;
+    cursor: pointer;
+    margin: auto 1rem;
+}
+.cart-items {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #f09d51;
+    padding: 0 7px;
+    border-radius: 30%;
+    color: #fff;
+
+}
+/* .navbar-toggler{
+    margin: 0 1rem;
+} */
+/* .navbar {
+    z-index: 9;
+} */
+.main-navbar {
+    margin: auto; 
+}
