@@ -37,6 +37,11 @@ body {
     color: #fff;
 
 }
+
+.cart-img {
+    width: 5%;
+    height: 5%;
+}
 /* .navbar-toggler{
     margin: 0 1rem;
 } */
