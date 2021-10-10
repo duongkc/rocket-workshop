@@ -1,6 +1,6 @@
 // variables
-const jsonString = JSON.stringify(rocketData)
-const json = JSON.parse(jsonString);
+// const jsonString = JSON.stringify(rocketData)
+// const json = JSON.parse(jsonString);
 
 
 
