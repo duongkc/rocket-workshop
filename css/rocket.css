@@ -110,6 +110,7 @@ canvas {
     padding: 0 10px;
     /* border: 1px solid red; */
     visibility: hidden;
+    text-align: center;
 
 }
 
