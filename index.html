@@ -14,7 +14,9 @@
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
     <!-- Own CSS -->
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/rocket.css">
+
 
     <title>Rocket Factory</title>
 
@@ -30,7 +32,40 @@
 <body>
     <div class="main">
         <header id="header">
+            <!-- navbar -->
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark main-navbar">
+                <div class="container">
+                    <div class="d-flex flex-grow-1">
+                        <a class="navbar-brand" href="#">
+                            <i class="fas fa-rocket fa-2x"></i>
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
 
+                    <div class="navbar-collapse collapse w-100 order-1 order-md-0 " id="navbarContent">
+                        <ul class="navbar-nav me-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="cart-btn ms-auto">
+                        <span class="nav-icon">
+                            <i class="fas fa-shopping-cart fa-2x"></i>
+                        </span>
+                        <div class="cart-items">0</div>
+                    </div>
+
+                </div>
+            </nav>
         </header>
         <main id="main_content">
             <div>
@@ -56,133 +91,69 @@
                         <div class="col right-column">
                             <h2>Pricing</h2>
                             <div id="selection-container">
-                                <div class="row option-rows">
-                                    <div class="col">
-                                        <button class="btn btn-primary" id="prev_top_button" type="button">
-                                            <i class="fas fa-angle-left"></i>
-                                        </button>
-                                    </div>
-                                    <div class="col item-col top-col">
-                                    </div>
-                                    <div class="col">
-                                        <button class="btn btn-primary" id="next_top_button" type="button">
-                                            <i class="fas fa-angle-right"></i>
-                                        </button>
-                                        Top
-                                    </div>
-                                </div>
-                                <div class="row option-rows">
-                                    <div class="col">
-                                        <button class="btn btn-primary" id="prev_middle_button" type="button">
-                                            <i class="fas fa-angle-left"></i>
-                                        </button>
-                                    </div>
-                                    <div class="col item-col middle-col">
-                                    </div>
-                                    <div class="col">
-                                        <button class="btn btn-primary" id="next_middle_button" type="button">
-                                            <i class="fas fa-angle-right"></i>
-                                        </button>
-                                        Middle
-                                    </div>
-                                </div>
-                                <div class="row option-rows">
-                                    <div class="col">
-                                        <button class="btn btn-primary" id="prev_bottom_button" type="button">
-                                            <i class="fas fa-angle-left"></i>
-                                        </button>
-                                    </div>
-                                    <div class="col item-col bottom-col">
-                                    </div>
-                                    <div class="col">
-                                        <button class="btn btn-primary" id="next_bottom_button" type="button">
-                                            <i class="fas fa-angle-right"></i>
-                                        </button>
-                                        Bottom
-                                    </div>
-                                </div>
-                                <!-- <ul>
-                                    <li class="item-li">
-                                        <div class="item-div prev-div">
+                                <div class="row item-row">
+                                    <div class="option-rows d-flex justify-content-between  mb-3 col-10">
+                                        <div class="p-2">
                                             <button class="btn btn-primary" id="prev_top_button" type="button">
                                                 <i class="fas fa-angle-left"></i>
                                             </button>
                                         </div>
-                                        <div id="yellowTopDiv" class="item-div" style="border: 1px black solid">
-                                            Yellow top <br>
-                                            €100,000
+                                        <div class="p-2 item-col top-col">
                                         </div>
-                                        <div id="redTopDiv" class="item-div">
-                                            Red top <br>
-                                            €250,000
-                                        </div>
-                                        <div id="blueTopDiv" class="item-div">
-                                            Blue top <br>
-                                            €50,000
-                                        </div>
-                                        <div class="item-div next-div">
+                                        <div class="p-2">
                                             <button class="btn btn-primary" id="next_top_button" type="button">
                                                 <i class="fas fa-angle-right"></i>
                                             </button>
-                                            Top
                                         </div>
-                                    </li>
-                                    <li class="item-li">
-                                        <div class="item-div prev-div">
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="p-2">Top</div>
+                                    </div>
+                                </div>
+                                <div class="row item-row">
+                                    <div class="option-rows d-flex justify-content-between  mb-3 col-10">
+                                        <div class="p-2">
                                             <button class="btn btn-primary" id="prev_middle_button" type="button">
                                                 <i class="fas fa-angle-left"></i>
                                             </button>
                                         </div>
-                                        <div class="items">
-                                            <div id="yellowMiddleDiv" class="item-div" style="border: 1px black solid">
-                                                Grey middle <br>
-                                                €500,000
-                                            </div>
-                                            <div id="redMiddleDiv" class="item-div">
-                                                green/yellow middle <br>
-                                                €750,000
-                                            </div>
-                                            <div id="blueMiddleDiv" class="item-div">
-                                                Blue/red middle <br>
-                                                €350,000
-                                            </div>
+                                        
+                                        <div class="p-2 item-col middle-col">
+                                            
                                         </div>
-                                        <div class="item-div next-div">
+                                        <div class="p-2">
                                             <button class="btn btn-primary" id="next_middle_button" type="button">
                                                 <i class="fas fa-angle-right"></i>
                                             </button>
-                                            Middle
                                         </div>
-                                    </li>
-                                    <li class="item-li">
-                                        <div class="item-div prev-div">
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="p-2">Middle</div>
+                                    </div>
+                                </div>
+                                <div class="row item-row">
+                                    <div class="option-rows d-flex justify-content-between  mb-3 col-10">
+                                        <div class="p-2">
                                             <button class="btn btn-primary" id="prev_bottom_button" type="button">
                                                 <i class="fas fa-angle-left"></i>
                                             </button>
                                         </div>
-                                        <div id="yellowBottomDiv" class="item-div" style="border: 1px black solid">
-                                            Yellow bottom <br>
-                                            €400,000
+                                        
+                                        <div class="p-2 item-col bottom-col">
+                                            
                                         </div>
-                                        <div id="redBottomDiv" class="item-div">
-                                            Red bottom <br>
-                                            €500,000
-                                        </div>
-                                        <div id="blueBottomDiv" class="item-div">
-                                            Blue bottom <br>
-                                            €250,000
-                                        </div>
-                                        <div class="item-div next-div">
+                                        <div class="p-2">
                                             <button class="btn btn-primary" id="next_bottom_button" type="button">
                                                 <i class="fas fa-angle-right"></i>
                                             </button>
-                                            Bottom
                                         </div>
-                                    </li>
-                                </ul> -->
-                            
-                            
-                            
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="p-2">Bottom</div>
+                                    </div>
+                                </div>
+                                
+
                                 <div id="totalPriceText"> The total price of your selected rocket is: <text id="totalPriceValue">1000000</text>
                                 </div>
                                 <button id="orderButton" onclick="order()"> Order </button>
@@ -193,12 +164,10 @@
                 </div>
             </div>
         </main>
-
     </div>
-
     
 
-
+    <!-- Own JS -->
     <script src="js/stars.js"></script>
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
