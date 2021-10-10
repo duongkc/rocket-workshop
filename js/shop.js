@@ -2,7 +2,7 @@ var totalPrice = 0;
 var topIndex = 0;
 var middleIndex = 0;
 var bottomIndex = 0;
-
+let cart = [];
 
 function order(){
     // var price = document.getElementById("totalPriceValue").innerHTML;
@@ -15,7 +15,9 @@ function order(){
     rocket.amount = 1; //Change later on with add/lower amount functions
     rocket.total = totalPrice;
 
-    localStorage.cart = JSON.stringify(rocket);
+    cart = [...cart, rocket]
+    //localStorage.cart = JSON.stringify(rocket);
+    localStorage.cart = JSON.stringify(cart);
     console.log(JSON.parse(localStorage.cart));
 
     console.log("You have ordered the rocket at a price of "+ formatToCurrency(totalPrice) +"!");
