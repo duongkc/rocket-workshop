@@ -119,6 +119,11 @@ class UI {
         })
         cartBtn.addEventListener('click', this.showCart);
         closeCartBtn.addEventListener('click', this.hidecart);
+        cartOverlay.addEventListener('click', this.hidecart);
+        $('.cart').click(function(event){
+            event.stopPropagation(); // prevents executing the above event
+        });
+
 
 
     }
