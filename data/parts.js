@@ -1,4 +1,4 @@
-var rocketData = {
+const json = {
     "rocket": {
         "top": [
             {

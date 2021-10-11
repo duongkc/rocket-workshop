@@ -1,7 +1,7 @@
-
 // variables
-const jsonString = JSON.stringify(rocketData)
-const json = JSON.parse(jsonString);
+// const jsonString = JSON.stringify(rocketData)
+// const json = JSON.parse(jsonString);
+
 
 
 function loadTop() {
@@ -130,14 +130,14 @@ $(document).ready(function() {
     // console.log(lala)
     // console.log(JSON.parse(localStorage.getItem('test1')))
     
-    var top = $(".bit-top");
-    var middle = $(".bit-middle");
-    var bottom = $(".bit-bottom");
-    var topItems = $('.item-top');
-    var middleItems = $('.item-middle');
-    var bottomItems = $('.item-bottom');
+    const topParts = $(".bit-top");
+    const middleParts = $(".bit-middle");
+    const bottomParts = $(".bit-bottom");
+    const topItems = $('.item-top');
+    const middleItems = $('.item-middle');
+    const bottomItems = $('.item-bottom');
 
-    var topPicker = new PartSwitcher(top, topItems);
+    var topPicker = new PartSwitcher(topParts, topItems);
     $('#prev_top_button').click(function() {
         topPicker.Previous();
     });
@@ -145,7 +145,7 @@ $(document).ready(function() {
         topPicker.Next();
     });
 
-    var middlePicker = new PartSwitcher(middle, middleItems);
+    var middlePicker = new PartSwitcher(middleParts, middleItems);
     $('#prev_middle_button').click(function() {
         middlePicker.Previous();
     });
@@ -153,7 +153,7 @@ $(document).ready(function() {
         middlePicker.Next();
     });
 
-    var bottomPicker = new PartSwitcher(bottom, bottomItems);
+    var bottomPicker = new PartSwitcher(bottomParts, bottomItems);
     $('#prev_bottom_button').click(function() {
         bottomPicker.Previous();
     });

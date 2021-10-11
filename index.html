@@ -14,6 +14,7 @@
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
     <!-- Own CSS -->
+    <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/cart.css">
     <link rel="stylesheet" href="css/rocket.css">
 
@@ -27,6 +28,7 @@
     <script src="data/parts.js"></script>
     <script src="js/builder.js"></script>
     <script src="js/shop.js"></script>
+    
 </head>
 
 <body>
@@ -39,7 +41,9 @@
                         <a class="navbar-brand" href="#">
                             <i class="fas fa-rocket fa-2x"></i>
                         </a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
+                            aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
                     </div>
@@ -117,9 +121,9 @@
                                                 <i class="fas fa-angle-left"></i>
                                             </button>
                                         </div>
-                                        
+
                                         <div class="p-2 item-col middle-col">
-                                            
+
                                         </div>
                                         <div class="p-2">
                                             <button class="btn btn-primary" id="next_middle_button" type="button">
@@ -138,9 +142,9 @@
                                                 <i class="fas fa-angle-left"></i>
                                             </button>
                                         </div>
-                                        
+
                                         <div class="p-2 item-col bottom-col">
-                                            
+
                                         </div>
                                         <div class="p-2">
                                             <button class="btn btn-primary" id="next_bottom_button" type="button">
@@ -152,13 +156,14 @@
                                         <div class="p-2">Bottom</div>
                                     </div>
                                 </div>
-                                
 
-                                <div id="totalPriceText"> The total price of your selected rocket is: <text id="totalPriceValue">1000000</text>
+
+                                <div id="totalPriceText"> The total price of your selected rocket is: <text
+                                        id="totalPriceValue">1000000</text>
                                 </div>
-                                <button id="orderButton" onclick="order()"> Order </button>
-                                <input type=button onClick="location.href='cart.html'"
-                                value='To cart'>
+                                <button class="btn btn-warning" id="orderButton" > Order </button>
+                                <input class="btn btn-success" type=button onClick="location.href='cart.html'"
+                                    value='To cart'>
                             </div>
                         </div>
 
@@ -166,11 +171,28 @@
                 </div>
             </div>
         </main>
+        <!-- Cart -->
+        <div class="cart-overlay">
+            <div class="cart" id="cartDOM">
+                <span class="close-cart">
+                    <i class="far fa-window-close"></i>
+                </span>
+                <h2>your cart</h2>
+                <div class="cart-content">
+
+                </div>
+                <div class="cart-footer">
+                    <h3>your total : <span class="cart-total" id="cartTotal">0</span></h3>
+                    <button class="clear-cart fancy-btn">Clear Cart <i class="far fa-trash-alt"></i></button>
+                </div>
+            </div>
+
+        </div>
     </div>
-    
 
     <!-- Own JS -->
     <script src="js/stars.js"></script>
+    <script src="js/cart.js"></script>
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"

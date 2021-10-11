@@ -1,0 +1,32 @@
+.nav-icon {
+    color: #fff;
+    /* font-size: 1.5rem; */
+}
+
+.main-navbar {
+    margin: auto; 
+}
+
+.cart-btn {
+    position: relative;
+    cursor: pointer;
+    margin: auto 1rem;
+}
+
+.cart-items {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #f09d51;
+    padding: 0 7px;
+    border-radius: 30%;
+    color: #fff;
+
+}
+
+/* .navbar-toggler{
+    margin: 0 1rem;
+} */
+/* .navbar {
+    z-index: 9;
+} */

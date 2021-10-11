@@ -2,7 +2,6 @@ var totalPrice = 0;
 var topIndex = 0;
 var middleIndex = 0;
 var bottomIndex = 0;
-let cart = [];
 
 function order(){
     let inCart = false;
