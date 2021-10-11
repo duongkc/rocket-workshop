@@ -33,7 +33,7 @@ function order(){
         localStorage.cart = JSON.stringify(cart);
         console.log(JSON.parse(localStorage.cart));
     }
-
+    document.getElementById("no-cart-items").innerHTML = parseInt(document.getElementById("no-cart-items").innerHTML) + 1; 
     console.log("You have ordered the rocket at a price of "+ formatToCurrency(totalPrice) +"!");
 }
 
