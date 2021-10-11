@@ -5,20 +5,34 @@ var bottomIndex = 0;
 let cart = [];
 
 function order(){
+    let inCart = false;
     // var price = document.getElementById("totalPriceValue").innerHTML;
+    // Check if rocket already in cart
+    for (let i = 0; i < cart.length; i++){
+        if(json.rocket.top[topIndex] == cart[i].top){
+            if(json.rocket.middle[middleIndex] == cart[i].middle){
+                if(json.rocket.bottom[bottomIndex] == cart[i].bottom){
+                    cart[i].amount += 1;
+                    localStorage.cart = JSON.stringify(cart);
+                    inCart = true;
+                }
+            }
+        }
+    }
+    if (!inCart){
+        let rocket = {};
+        rocket.name = "Rocket";
+        rocket.top = json.rocket.top[topIndex];
+        rocket.middle = json.rocket.middle[middleIndex];
+        rocket.bottom = json.rocket.bottom[bottomIndex];
+        rocket.amount = 1; //Change later on with add/lower amount functions
+        rocket.total = totalPrice;
 
-    let rocket = {};
-    rocket.name = "Rocket";
-    rocket.top = json.rocket.top[topIndex];
-    rocket.middle = json.rocket.middle[middleIndex];
-    rocket.bottom = json.rocket.bottom[bottomIndex];
-    rocket.amount = 1; //Change later on with add/lower amount functions
-    rocket.total = totalPrice;
-
-    cart = [...cart, rocket]
-    //localStorage.cart = JSON.stringify(rocket);
-    localStorage.cart = JSON.stringify(cart);
-    console.log(JSON.parse(localStorage.cart));
+        cart = [...cart, rocket]
+        //localStorage.cart = JSON.stringify(rocket);
+        localStorage.cart = JSON.stringify(cart);
+        console.log(JSON.parse(localStorage.cart));
+    }
 
     console.log("You have ordered the rocket at a price of "+ formatToCurrency(totalPrice) +"!");
 }
