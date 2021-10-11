@@ -110,7 +110,7 @@ class UI {
         cart = Storage.getCart();
         this.setCartValues(cart);
         this.populateCart(cart);
-        let context = this;
+        // let context = this;
         // $('#orderButton').click(function() {
         //     context.order();
         // });
@@ -119,6 +119,11 @@ class UI {
         })
         cartBtn.addEventListener('click', this.showCart);
         closeCartBtn.addEventListener('click', this.hidecart);
+        cartOverlay.addEventListener('click', this.hidecart);
+        $('.cart').click(function(event){
+            event.stopPropagation(); // prevents executing the above event
+        });
+
 
 
     }
@@ -135,8 +140,13 @@ class UI {
         });
         cartContent.addEventListener('click', event => {
             // If clicked on 'remove' button
-            if (event.target.classList.contains("remove-item")) {
-                let removeItem = event.target;
+            if (event.target.classList.contains("remove-item") || $(event.target).parent('.remove-item').length) {
+                if(event.target.classList.contains("remove-item")) {
+                    var removeItem = event.target;
+                } else {
+                    var removeItem = $(event.target).parent().get(0);
+                }
+                
                 let id = removeItem.dataset.id;
                 cart = cart.filter(item => parseInt(item.id) !== parseInt(id));
                 this.setCartValues(cart);
