@@ -14,28 +14,51 @@ let cart = [];
 // UI that displays cart items
 class UI {
     order() {
-        let rocket = {};
-        if(cart.length > 0) {
-            rocket.id = cart[cart.length - 1].id + 1;
-        } else {
-            rocket.id = 0;
-        }        
-        rocket.name = "Rocket";
-        rocket.top = json.rocket.top[topIndex];
-        rocket.middle = json.rocket.middle[middleIndex];
-        rocket.bottom = json.rocket.bottom[bottomIndex];
-        rocket.amount = 1; //Change later on with add/lower amount functions
-        rocket.total = totalPrice;
+        let inCart = false;
+        // var price = document.getElementById("totalPriceValue").innerHTML;
+        // Check if rocket already in cart
+        for (let i = 0; i < cart.length; i++){
+            if(json.rocket.top[topIndex].name == cart[i].top.name){
+                if(json.rocket.middle[middleIndex].name == cart[i].middle.name){
+                    if(json.rocket.bottom[bottomIndex].name == cart[i].bottom.name){
+                        cart[i].amount += 1;
+                        Storage.saveCart(cart);
+                        $('.item-amount[data-id='+ cart[i].id +']').text(cart[i].amount);
+                        inCart = true;
+                        this.setCartValues(cart);
+                        this.showCart();
+                        
+                    }
+                }
+            }
+        }
+        if (!inCart){
+            let rocket = {};
+            if(cart.length > 0) {
+                rocket.id = cart[cart.length - 1].id + 1;
+            } else {
+                rocket.id = 0;
+            }  
+            rocket.name = "Rocket";
+            rocket.top = json.rocket.top[topIndex];
+            rocket.middle = json.rocket.middle[middleIndex];
+            rocket.bottom = json.rocket.bottom[bottomIndex];
+            rocket.amount = 1; //Change later on with add/lower amount functions
+            rocket.total = totalPrice;
+            // Add new rocket to the cart
+            cart = [...cart, rocket]
+            // Save cart in local storage
+            Storage.saveCart(cart);
+            // console.log(JSON.parse(localStorage.cart));
+            // add to DOM
+            this.setCartValues(cart);
+            this.addCartItem(rocket);
+            this.showCart();
+        }
         
-        // Add new rocket to the cart
-        cart = [...cart, rocket];
-        // Save cart in local storage
-        Storage.saveCart(cart);
+
         // console.log(JSON.parse(localStorage.cart));
-        // add to DOM
-        this.setCartValues(cart);
-        this.addCartItem(rocket);
-        this.showCart();
+
         
     }
     setCartValues(cart) {
@@ -69,7 +92,7 @@ class UI {
                 <!-- item functionality -->
                 <div>
                     <i class="fas fa-chevron-up cart-up-icon" data-id=${item.id}></i>
-                    <h5 class="item-amount">
+                    <h5 class="item-amount" data-id=${item.id}>
                     ${item.amount}
                     </h5>
                     <i class="fas fa-chevron-down cart-down-icon" data-id=${item.id}></i>
