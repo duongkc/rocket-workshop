@@ -33,6 +33,7 @@ p{
     border: 1px solid var(--primaryColor);
     transition: var(--mainTransition);
     cursor: pointer;
+    margin: 1rem;
 }
 /* ------------------------------------- */
 
