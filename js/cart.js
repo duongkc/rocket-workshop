@@ -15,6 +15,7 @@ function setCartValues(cart) {
     }
     document.getElementById("cart-total").innerHTML = formatToCurrency(tempTotal);
     document.getElementById("cart-amount").innerHTML = itemsTotal;
+    document.getElementById("no-cart-items-cartPage").innerHTML = itemsTotal;
 };
 
 function addCartItem(item){
@@ -24,6 +25,7 @@ function addCartItem(item){
     <div>
     <h4> Rocket </h4>
     <h5> ${formatToCurrency(item.total)} </h5>
+    <h6> ${item.top.name}, ${item.middle.name} and ${item.bottom.name}.</h6>
     <span class = "remove-item"> remove </span>
     </div>
     <div>
