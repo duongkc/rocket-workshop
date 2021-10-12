@@ -1,5 +1,4 @@
 // Variables
-
 const cartBtn = document.querySelector(".cart-btn");
 const closeCartBtn = document.querySelector(".close-cart");
 const clearCartBtn = document.querySelector(".clear-cart");
@@ -8,28 +7,27 @@ const cartOverlay = document.querySelector(".cart-overlay");
 const cartItems = document.querySelector(".cart-items");
 const cartTotal = document.querySelector(".cart-total");
 const cartContent = document.querySelector(".cart-content");
-
+var totalPrice = 0;
+var topIndex = 0;
+var middleIndex = 0;
+var bottomIndex = 0;
 let cart = [];
 
 // UI that displays cart items
 class UI {
     order() {
         let inCart = false;
-        // var price = document.getElementById("totalPriceValue").innerHTML;
         // Check if rocket already in cart
         for (let i = 0; i < cart.length; i++){
-            if(json.rocket.top[topIndex].name == cart[i].top.name){
-                if(json.rocket.middle[middleIndex].name == cart[i].middle.name){
-                    if(json.rocket.bottom[bottomIndex].name == cart[i].bottom.name){
-                        cart[i].amount += 1;
-                        Storage.saveCart(cart);
-                        $('.item-amount[data-id='+ cart[i].id +']').text(cart[i].amount);
-                        inCart = true;
-                        this.setCartValues(cart);
-                        this.showCart();
-                        
-                    }
-                }
+            if(json.rocket.top[topIndex].name == cart[i].top.name 
+                && json.rocket.middle[middleIndex].name == cart[i].middle.name
+                && json.rocket.bottom[bottomIndex].name == cart[i].bottom.name){
+                    cart[i].amount += 1;
+                    Storage.saveCart(cart);
+                    $('.item-amount[data-id='+ cart[i].id +']').text(cart[i].amount);
+                    inCart = true;
+                    this.setCartValues(cart);
+                    this.showCart();
             }
         }
         if (!inCart){
@@ -43,23 +41,17 @@ class UI {
             rocket.top = json.rocket.top[topIndex];
             rocket.middle = json.rocket.middle[middleIndex];
             rocket.bottom = json.rocket.bottom[bottomIndex];
-            rocket.amount = 1; //Change later on with add/lower amount functions
+            rocket.amount = 1;
             rocket.total = totalPrice;
             // Add new rocket to the cart
             cart = [...cart, rocket]
             // Save cart in local storage
             Storage.saveCart(cart);
-            // console.log(JSON.parse(localStorage.cart));
             // add to DOM
             this.setCartValues(cart);
             this.addCartItem(rocket);
             this.showCart();
         }
-        
-
-        // console.log(JSON.parse(localStorage.cart));
-
-        
     }
     setCartValues(cart) {
         let priceTotal = 0;
@@ -105,15 +97,10 @@ class UI {
         cartOverlay.classList.add("transparentBcg");
         cartDOM.classList.add("showCart");
     }
-
     setupAPP() {
         cart = Storage.getCart();
         this.setCartValues(cart);
         this.populateCart(cart);
-        // let context = this;
-        // $('#orderButton').click(function() {
-        //     context.order();
-        // });
         $('#orderButton').on('click', () => {
             this.order();
         })
@@ -123,9 +110,6 @@ class UI {
         $('.cart').click(function(event){
             event.stopPropagation(); // prevents executing the above event
         });
-
-
-
     }
     populateCart(cart) {
         cart.forEach(item => this.addCartItem(item));
@@ -209,5 +193,4 @@ $(document).ready(function() {
     const ui = new UI();
     ui.setupAPP();
     ui.cartLogic();
-
 });
