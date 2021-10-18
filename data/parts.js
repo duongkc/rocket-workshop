@@ -1,4 +1,4 @@
-const json = {
+const shipData = {
     "rocket": {
         "top": [
             {
