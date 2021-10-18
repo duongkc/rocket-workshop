@@ -1,8 +1,26 @@
 // variables
 // const jsonString = JSON.stringify(rocketData)
 // const json = JSON.parse(jsonString);
-
-
+var json = "";
+function loadJson(){
+    let url = "http://spaceshop-backend.azurewebsites.net/rocketbyid/0"
+    $.ajax({
+        type: "GET",
+        async: false,
+        url: url,
+        dataType: "json",
+        data: {},
+        success: function (data) {
+            console.log("successfully retrieved DB data from" + url)
+            json = {rocket: data}
+            console.log(json)
+        },
+        error: function(xhr, desc, err) {
+            console.log("Failed to retrieve data from DB");
+            json = shipData;
+        }
+    });
+}
 
 function loadTop() {
     let imageOutput = "";
@@ -118,6 +136,7 @@ class PartSwitcher {
 
 $(document).ready(function() {
 
+    loadJson();
     loadTop();
     loadMiddle();
     loadBottom();
