@@ -3,7 +3,7 @@
 // const json = JSON.parse(jsonString);
 var json = "";
 function loadJson(){
-    let url = "http://spaceshop-backend.azurewebsites.net/rocketbyid/0"
+    let url = "https://spaceshop-backend.azurewebsites.net/rocketbyid/0"
     $.ajax({
         type: "GET",
         async: false,
