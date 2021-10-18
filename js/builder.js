@@ -11,7 +11,7 @@ function loadJson(){
         dataType: "json",
         data: {},
         success: function (data) {
-            console.log("successfully retrieved DB data from" + url)
+            console.log("successfully retrieved DB data from " + url)
             json = {rocket: data}
             console.log(json)
         },
