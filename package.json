@@ -1,0 +1,19 @@
+{
+  "name": "rocket-workshop",
+  "version": "1.0.0",
+  "description": "SpaceShop, an E-commerce website to customize and order spaceships",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duongkc/rocket-workshop.git"
+  },
+  "author": "Kim & Imke",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/duongkc/rocket-workshop/issues"
+  },
+  "homepage": "https://github.com/duongkc/rocket-workshop#readme"
+}
