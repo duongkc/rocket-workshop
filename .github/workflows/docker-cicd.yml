@@ -20,7 +20,10 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag '${{env.DOCKER_IMAGE_NAME}}':latest
     - name: Docker Login
-      run: docker login --username '${{secrets.DOCKER_LOGIN}}' --password '${{secrets.DOCKER_PASSWORD}}'
+      uses: docker/login-action@v1
+      with:
+        username: ${{secrets.DOCKER_LOGIN}}
+        password: ${{secrets.DOCKER_TOKEN}}
     - name: Tag the Docker image
       run: docker tag '${{env.DOCKER_IMAGE_NAME}}':latest '${{secrets.DOCKER_LOGIN}}'/'${{env.DOCKER_IMAGE_NAME}}':latest
     - name: Push the Docker image
