@@ -14,7 +14,7 @@
     border: 1px solid black;
     margin: 20px;
     height: 700px;
-    width: 400px;
+    width: 500px;
     position: relative;
     background-color: #000;
     background-image: radial-gradient(circle at top right, rgba(121, 68, 154, 0.13), transparent),
@@ -64,7 +64,7 @@ canvas {
     top: 0;
     bottom: 0;
     margin: auto;
-    width: 300px;
+    max-width: 400px;
 }
 
 .bit-top {

@@ -3,17 +3,18 @@
 // const json = JSON.parse(jsonString);
 var json = "";
 function loadJson(){
-    let url = "https://spaceshop-backend.azurewebsites.net/rocketbyid/0"
+
+    let searchParams = new URLSearchParams(window.location.search);
+    let id = searchParams.get("id");
+    let url = "https://spaceshop-backend.azurewebsites.net/rocketbyid/" + id;
     $.ajax({
         type: "GET",
-        async: false,
         url: url,
         dataType: "json",
         data: {},
         success: function (data) {
-            console.log("successfully retrieved DB data from " + url)
             json = {rocket: data}
-            console.log(json)
+            loadParts();
         },
         error: function(xhr, desc, err) {
             console.log("Failed to retrieve data from DB");
@@ -133,21 +134,11 @@ class PartSwitcher {
     }
 }
 
-
-$(document).ready(function() {
-
-    loadJson();
+function loadParts() {
     loadTop();
     loadMiddle();
     loadBottom();
     updatePrice();
-
-    // // json test
-    // var jtest = {};
-    // jtest.something = {};
-    // lala = JSON.stringify(jtest);
-    // console.log(lala)
-    // console.log(JSON.parse(localStorage.getItem('test1')))
     
     const topParts = $(".bit-top");
     const middleParts = $(".bit-middle");
@@ -179,5 +170,9 @@ $(document).ready(function() {
     $('#next_bottom_button').click(function() {
         bottomPicker.Next();
     });
+}
+
+$(document).ready(function() {
+    loadJson();
 });
 
