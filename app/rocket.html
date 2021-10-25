@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -16,18 +17,21 @@
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/cart.css">
-    <link rel="stylesheet" href="css/frontpage.css">
+    <link rel="stylesheet" href="css/rocket.css">
 
-    <title>Welcome to Spaceshop!</title>
 
-        <!-- JS libraries -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Rocket Factory</title>
 
-        <!-- Own JS -->
-        <script src="js/shop.js"></script>
-        <script src="js/frontpage.js"></script>
+    <!-- JS libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+    <!-- Own JS -->
+    <script src="data/parts.js"></script>
+    <script src="js/builder.js"></script>
+    <script src="js/shop.js"></script>
+    
 </head>
+
 <body>
     <div class="main">
         <header id="header">
@@ -68,74 +72,104 @@
                 </div>
             </nav>
         </header>
-        <main>
+        <main id="main_content">
             <div>
-                <div class="hero">
-                    <div class="banner">
-                        <h1 class="banner-title">Welcome to SpaceShop!</h1>
-                        <button class="banner-btn" onclick="moveDown()">shop now</button>
+                <div class="container product-container">
+                    <div class="row product-filler">
+                        <h1>Welcome to the Rocket Factory</h1>
+                    </div>
+                    <div class="row product-columns">
+                        <div class="col left-column">
+                            <h2>Your selected rocket:</h2>
+                            <div class="space-container">
+                                <canvas></canvas>
+                                <div id="rocket_container">
+                                    <div class="rocket-top">
+                                    </div>
+                                    <div class="rocket-middle">
+                                    </div>
+                                    <div class="rocket-bottom">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col right-column">
+                            <h2>Pricing</h2>
+                            <div id="selection-container">
+                                <div class="row item-row">
+                                    <div class="option-rows d-flex justify-content-between  mb-3 col-10">
+                                        <div class="p-2">
+                                            <button class="btn btn-primary" id="prev_top_button" type="button">
+                                                <i class="fas fa-angle-left"></i>
+                                            </button>
+                                        </div>
+                                        <div class="p-2 item-col top-col">
+                                        </div>
+                                        <div class="p-2">
+                                            <button class="btn btn-primary" id="next_top_button" type="button">
+                                                <i class="fas fa-angle-right"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="p-2">Top</div>
+                                    </div>
+                                </div>
+                                <div class="row item-row">
+                                    <div class="option-rows d-flex justify-content-between  mb-3 col-10">
+                                        <div class="p-2">
+                                            <button class="btn btn-primary" id="prev_middle_button" type="button">
+                                                <i class="fas fa-angle-left"></i>
+                                            </button>
+                                        </div>
+
+                                        <div class="p-2 item-col middle-col">
+
+                                        </div>
+                                        <div class="p-2">
+                                            <button class="btn btn-primary" id="next_middle_button" type="button">
+                                                <i class="fas fa-angle-right"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="p-2">Middle</div>
+                                    </div>
+                                </div>
+                                <div class="row item-row">
+                                    <div class="option-rows d-flex justify-content-between  mb-3 col-10">
+                                        <div class="p-2">
+                                            <button class="btn btn-primary" id="prev_bottom_button" type="button">
+                                                <i class="fas fa-angle-left"></i>
+                                            </button>
+                                        </div>
+
+                                        <div class="p-2 item-col bottom-col">
+
+                                        </div>
+                                        <div class="p-2">
+                                            <button class="btn btn-primary" id="next_bottom_button" type="button">
+                                                <i class="fas fa-angle-right"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="p-2">Bottom</div>
+                                    </div>
+                                </div>
+
+
+                                <div id="totalPriceText"> The total price of your selected rocket is: <text
+                                        id="totalPriceValue">1000000</text>
+                                </div>
+                                <button class="btn btn-warning" id="orderButton" > Order </button>
+                                <input class="btn btn-success" type=button onClick="location.href='cart.html'"
+                                    value='To cart'>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-                <section class="products">
-                    <div class="section-title">
-                        <h2>our products</h2>
-                    </div>
-                    <div class="products-center">
-                        <!-- single product -->
-                        <article class="product">
-                            <div class="img-container">
-                                <a href="rocket.html" >
-                                    <img
-                                    src="./img/rocketthumbnail.png"
-                                    alt="product"
-                                    class="product-img"
-                                />
-                                </a>
-                            </div>
-                            <h3>Rocket</h3>
-                        </article>
-                        <!-- end of single product -->
-                        <!-- Duplicate product -->
-                        <article class="product">
-                            <div class="img-container">
-                                <a href="rocket.html" >
-                                    <img
-                                    src="./img/rocketthumbnail.png"
-                                    alt="product"
-                                    class="product-img"
-                                />
-                                </a>
-                            </div>
-                            <h3>Rocket</h3>
-                        </article>
-                        <article class="product">
-                            <div class="img-container">
-                                <a href="rocket.html" >
-                                    <img
-                                    src="./img/rocketthumbnail.png"
-                                    alt="product"
-                                    class="product-img"
-                                />
-                                </a>
-                            </div>
-                            <h3>Rocket</h3>
-                        </article>
-                        <article class="product">
-                            <div class="img-container">
-                                <a href="rocket.html" >
-                                    <img
-                                    src="./img/rocketthumbnail.png"
-                                    alt="product"
-                                    class="product-img"
-                                />
-                                </a>
-                            </div>
-                            <h3>Rocket</h3>
-                        </article>
-                        <!-- end of single product -->
-                        
-                    </div>
-                </section>
             </div>
         </main>
         <!-- Cart -->
@@ -256,13 +290,13 @@
         <!-- End of Footer -->
     </div>
 
-
-
     <!-- Own JS -->
+    <script src="js/stars.js"></script>
     <script src="js/cart.js"></script>
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
         crossorigin="anonymous"></script>
 </body>
+
 </html>
