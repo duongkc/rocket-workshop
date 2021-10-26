@@ -34,9 +34,9 @@ function setCartValues(cart) {
 function addCartItem(item){
     const div = document.getElementById("cart-content-id");
     div.innerHTML += `<div class="cart-item">
-    <img class="cart-img" src="./img/rocketthumbnail.png" alt="product"/>
+    <img class="cart-img" src=${item.thumbnail} alt="product"/>
     <div>
-    <h4> Rocket </h4>
+    <h4> ${item.name} </h4>
     <h5> ${formatToCurrency(item.total)} </h5>
     <h6> ${item.top.name}, ${item.middle.name} and ${item.bottom.name}.</h6>
     <span class = "remove-item" onclick="removeItem(${item.id})"> remove </span>

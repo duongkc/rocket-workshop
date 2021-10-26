@@ -37,7 +37,7 @@ class UI {
             } else {
                 rocket.id = 0;
             }  
-            rocket.name = "Rocket";
+            rocket.name = json.rocket.name;
             rocket.top = json.rocket.top[topIndex];
             rocket.middle = json.rocket.middle[middleIndex];
             rocket.bottom = json.rocket.bottom[bottomIndex];

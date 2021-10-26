@@ -193,3 +193,7 @@
     cursor: pointer;
     margin: 1rem;
 }
+
+.cart-item > div > h4 {
+    text-transform: capitalize;
+}
