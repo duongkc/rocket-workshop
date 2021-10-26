@@ -41,6 +41,7 @@ class UI {
             rocket.top = json.rocket.top[topIndex];
             rocket.middle = json.rocket.middle[middleIndex];
             rocket.bottom = json.rocket.bottom[bottomIndex];
+            rocket.thumbnail = json.rocket.thumbnail;
             rocket.amount = 1;
             rocket.total = totalPrice;
             // Add new rocket to the cart
@@ -69,7 +70,7 @@ class UI {
         div.classList.add("cart-item");
         div.innerHTML = `<!-- cart item -->
                 <!-- item image -->
-                <img src="img/rocketthumbnail.png" alt="product" />
+                <img src="` + item.thumbnail + `" alt="product" />
                 <!-- item info -->
                 <div>
                     <h4>${item.name}</h4>
