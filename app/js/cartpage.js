@@ -25,6 +25,10 @@ function setCartValues(cart) {
     document.getElementById("cart-total").innerHTML = formatToCurrency(tempTotal);
     document.getElementById("cart-amount").innerHTML = itemsTotal;
     document.getElementById("no-cart-items-cartPage").innerHTML = itemsTotal;
+    if(document.getElementById("shipping-cost").innerHTML != " "){
+        calcShippingCost(document.getElementById("dropbtn").innerHTML);
+    }
+    
 };
 
 function addCartItem(item){
@@ -102,6 +106,117 @@ function findIdx(cart, id){
 }
 
 function proceedCheckout(){
-    alert("You have succesfully placed an order. Your rockets will arrive shortly.");
-    clearCart();
+    if(document.getElementById("shipping-cost").innerHTML == " "){
+        alert("Please first select a planet to ship your order to.")
+    } else {
+        alert("You have succesfully placed an order. Your rockets will arrive shortly.");
+        clearCart();
+    }
+    
+}
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById("select-location-btn");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = "./img/planet-map.png";
+  captionText.innerHTML = `Please select your home planet*: 
+  <div class="dropdown">
+      <button class="dropbtn" id="dropbtn">Select your planet...</button>
+      <div class="dropdown-content">
+          <a onclick="selectPlanet(this.innerHTML)">A</a>
+          <a onclick="selectPlanet(this.innerHTML)">B</a>
+          <a onclick="selectPlanet(this.innerHTML)">C</a>
+          <a onclick="selectPlanet(this.innerHTML)">D</a>
+          <a onclick="selectPlanet(this.innerHTML)">E</a>
+          <a onclick="selectPlanet(this.innerHTML)">F</a>
+          <a onclick="selectPlanet(this.innerHTML)">G</a>
+          <a onclick="selectPlanet(this.innerHTML)">H</a>
+          <a onclick="selectPlanet(this.innerHTML)">I</a>
+          <a onclick="selectPlanet(this.innerHTML)">J</a>
+      </div>
+  </div> 
+  <button class="confirm-btn" onclick="confirmLocation()"> confirm </button> <br>
+  <div>
+  *: If your home planet cannot be found in this list, we are sorry to inform you that our current shipping policy does not include shipment to your planet.`;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+  modal.style.display = "none";
+}
+
+function selectPlanet(planet){
+    document.getElementById("dropbtn").innerHTML = planet;
+}
+
+function confirmLocation(){
+    planet = document.getElementById("dropbtn").innerHTML;
+    shortestPath(planet);
+    calcShippingCost(planet);
+    modal.style.display = "none"
+}
+// Shipping cost part
+function calcShippingCostv0(planet){
+    let cost = 0;
+    let pathVar = "test";
+    if(planet != "F"){
+
+        pathVar = document.getElementById("shipping-path").innerHTML;
+        console.log((pathVar.match(/>/g)||[]).length);
+    }
+    let cartCost = Number(document.getElementById("cart-total").innerHTML.replace(/[^0-9.-]+/g,""));
+    document.getElementById("shipping-cost").innerHTML = formatToCurrency(cost);
+    document.getElementById("total-cost-incl").innerHTML = formatToCurrency(cost + cartCost);
+}
+
+function calcShippingCost(planet){
+    let cost = 0;
+    let pathVar = "test";
+    if(planet != "F"){
+        var start = "F";
+        var eind = planet;
+        var url = "https://spacetruckers2.azurewebsites.net/GetPath?from=" + start + "&to=" + eind;
+        console.log(url);
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) { 
+                pathVar = xhr.responseText;
+                cost = (pathVar.match(/>/g)||[]).length * 15000;
+                let cartCost = Number(document.getElementById("cart-total").innerHTML.replace(/[^0-9.-]+/g,""));
+                document.getElementById("shipping-cost").innerHTML = formatToCurrency(cost);
+                document.getElementById("total-cost-incl").innerHTML = formatToCurrency(cost + cartCost);
+            }
+         }
+        xhr.open("GET", url, true);
+        xhr.send(); 
+    } else {
+        document.getElementById("shipping-cost").innerHTML = formatToCurrency(0);
+        document.getElementById("total-cost-incl").innerHTML = document.getElementById("cart-total").innerHTML;
+    }
+}
+
+
+function shortestPath(eind) {
+    var start = "F";
+    var url = "https://spacetruckers2.azurewebsites.net/GetPath?from=" + start + "&to=" + eind;
+    console.log(url);
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) { 
+            var div = document.getElementById("shipping-path");
+            div.innerHTML = xhr.responseText;
+            result = div.innerHTML;
+        }
+    }
+    xhr.open("GET", url, true);
+    xhr.send();
 }
