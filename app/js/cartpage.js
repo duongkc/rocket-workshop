@@ -155,7 +155,10 @@ span.onclick = function() {
 }
 
 function selectPlanet(planet){
-    document.getElementById("dropbtn").innerHTML = planet;
+    let button = document.getElementById("dropbtn");
+    const buttonWidth = button.offsetWidth;
+    button.innerHTML = planet;
+    button.style.width = `${buttonWidth}px`;
 }
 
 function confirmLocation(){
