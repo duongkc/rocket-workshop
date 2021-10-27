@@ -21,6 +21,10 @@
     display: inline;
 }
 
+.header-item * {
+    display: inline;
+}
+
 .header-item::after {
     
     content: ' \|';
@@ -168,4 +172,8 @@ canvas {
     font-size: 1rem;
     /* font-weight: bold; */
     margin: 1rem;
+}
+
+.description {
+    text-align: justify;
 }
