@@ -14,6 +14,7 @@ function loadJson(){
         data: {},
         success: function (data) {
             json = {rocket: data}
+            $("#series_name").html(json.rocket.name);
             loadParts();
         },
         error: function(xhr, desc, err) {

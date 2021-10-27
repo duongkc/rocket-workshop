@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/cart.css">
     <link rel="stylesheet" href="css/rocket.css">
+    <link rel="stylesheet" href="css/review.css">
 
 
     <title>Spaceship Factory</title>
@@ -27,8 +28,10 @@
 
     <!-- Own JS -->
     <script src="data/parts.js"></script>
+    <script src="js/review.js"></script>
     <script src="js/builder.js"></script>
     <script src="js/shop.js"></script>
+
     
 </head>
 
@@ -76,7 +79,19 @@
             <div>
                 <div class="container product-container">
                     <div class="row product-filler">
-                        <h1>Build Your Own Spaceship</h1>
+                        <h1 class="page-heading">Build Your Own Spaceship</h1>
+                        <div class="product-header">
+                            <div class="header-item">Brand: Team Rocket</div>
+                            <div class="header-item">Series: <text id="series_name">Spaceship</text></div>
+                            <div class="header-item main-rating">
+                                <div class="stars-outer">
+                                    <div class="stars-inner"></div>
+                                </div>
+                                <span class="number-rating"></span>
+                                (xx Reviews)
+                            </div>
+                        </div>
+                        
                     </div>
                     <div class="row product-columns">
                         <div class="col left-column">
@@ -92,79 +107,116 @@
                                     </div>
                                 </div>
                             </div>
+                            <hr />
+                            <div class="description-container">
+                                <h3>Product Description</h3>
+                                <div class="description">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    
+                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+                                </div>
+                            </div>
                         </div>
                         <div class="col right-column">
                             <h2>Pricing</h2>
                             <div id="selection-container">
-                                <div class="row item-row">
-                                    <div class="option-rows d-flex justify-content-between  mb-3 col-10">
-                                        <div class="p-2">
-                                            <button class="btn btn-primary" id="prev_top_button" type="button">
-                                                <i class="fas fa-angle-left"></i>
-                                            </button>
+                                <div id="selection_rows">
+                                    <div class="row item-row">
+                                        <div class="option-rows d-flex justify-content-between  mb-3 col-6">
+                                            <div class="p-2">
+                                                <button class="btn btn-primary prev-btn" id="prev_top_button" type="button">
+                                                    <i class="fas fa-angle-left"></i>
+                                                </button>
+                                            </div>
+                                            <div class="p-2 item-col top-col">
+                                            </div>
+                                            <div class="p-2">
+                                                <button class="btn btn-primary next-btn" id="next_top_button" type="button">
+                                                    <i class="fas fa-angle-right"></i>
+                                                </button>
+                                            </div>
                                         </div>
-                                        <div class="p-2 item-col top-col">
-                                        </div>
-                                        <div class="p-2">
-                                            <button class="btn btn-primary" id="next_top_button" type="button">
-                                                <i class="fas fa-angle-right"></i>
-                                            </button>
+                                        <div class="col-2">
+                                            <div class="p-2">Top</div>
                                         </div>
                                     </div>
-                                    <div class="col-2">
-                                        <div class="p-2">Top</div>
+                                    <div class="row item-row">
+                                        <div class="option-rows d-flex justify-content-between  mb-3 col-6">
+                                            <div class="p-2">
+                                                <button class="btn btn-primary prev-btn" id="prev_middle_button" type="button">
+                                                    <i class="fas fa-angle-left"></i>
+                                                </button>
+                                            </div>
+    
+                                            <div class="p-2 item-col middle-col">
+    
+                                            </div>
+                                            <div class="p-2">
+                                                <button class="btn btn-primary next-btn" id="next_middle_button" type="button">
+                                                    <i class="fas fa-angle-right"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="p-2">Middle</div>
+                                        </div>
+                                    </div>
+                                    <div class="row item-row">
+                                        <div class="option-rows d-flex justify-content-between  mb-3 col-6">
+                                            <div class="p-2">
+                                                <button class="btn btn-primary prev-btn" id="prev_bottom_button" type="button">
+                                                    <i class="fas fa-angle-left"></i>
+                                                </button>
+                                            </div>
+    
+                                            <div class="p-2 item-col bottom-col">
+    
+                                            </div>
+                                            <div class="p-2">
+                                                <button class="btn btn-primary next-btn" id="next_bottom_button" type="button">
+                                                    <i class="fas fa-angle-right"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="p-2">Bottom</div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="row item-row">
-                                    <div class="option-rows d-flex justify-content-between  mb-3 col-10">
-                                        <div class="p-2">
-                                            <button class="btn btn-primary" id="prev_middle_button" type="button">
-                                                <i class="fas fa-angle-left"></i>
-                                            </button>
-                                        </div>
+                                
 
-                                        <div class="p-2 item-col middle-col">
 
-                                        </div>
-                                        <div class="p-2">
-                                            <button class="btn btn-primary" id="next_middle_button" type="button">
-                                                <i class="fas fa-angle-right"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="p-2">Middle</div>
-                                    </div>
+                                <div id="totalPriceText"><h4> The total price of your selected rocket is: </h4>
+                                    <h3><text id="totalPriceValue">1000000</text></h3>
+                                        
                                 </div>
-                                <div class="row item-row">
-                                    <div class="option-rows d-flex justify-content-between  mb-3 col-10">
-                                        <div class="p-2">
-                                            <button class="btn btn-primary" id="prev_bottom_button" type="button">
-                                                <i class="fas fa-angle-left"></i>
-                                            </button>
+                                <button class="btn btn-warning" id="orderButton" ><i class="fas fa-shopping-cart"></i> Order </button>
+                                <button class="btn btn-success" id="checkoutButton" type=button onClick="location.href='cart.html'">
+                                    <i class="fas fa-external-link-alt"></i> To Checkout
+                                </button>
+                                    
+                            </div>
+                            <hr />
+                            <div class="review_container">
+                                <div class="row">
+                                    <h3>Reviews</h3>
+                                </div>
+                                <div>
+                                    <div class="row review-header main-rating">
+                                        <div class="col-3">
+                                            <span class="number-rating "></span>
                                         </div>
-
-                                        <div class="p-2 item-col bottom-col">
-
+                                        <div class="col-5 main-stars">
+                                            <div class="stars-outer">
+                                                <div class="stars-inner"></div>
+                                            </div>
                                         </div>
-                                        <div class="p-2">
-                                            <button class="btn btn-primary" id="next_bottom_button" type="button">
-                                                <i class="fas fa-angle-right"></i>
-                                            </button>
+                                        <div class="review-count col-4">
+                                            XX Reviews
                                         </div>
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="p-2">Bottom</div>
                                     </div>
                                 </div>
 
-
-                                <div id="totalPriceText"> The total price of your selected rocket is: <text
-                                        id="totalPriceValue">1000000</text>
-                                </div>
-                                <button class="btn btn-warning" id="orderButton" > Order </button>
-                                <input class="btn btn-success" type=button onClick="location.href='cart.html'"
-                                    value='To checkout'>
                             </div>
                         </div>
 
