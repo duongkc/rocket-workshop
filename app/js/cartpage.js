@@ -202,3 +202,4 @@ function calcShippingCost(planet){
         document.getElementById("total-cost-incl").innerHTML = document.getElementById("cart-total").innerHTML;
     }
 }
+
