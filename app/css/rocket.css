@@ -9,6 +9,12 @@
     max-width: 76rem;
 }
 
+.left-column {
+    padding-right: 1.5rem;
+}
+.right-column {
+    padding-left: 1.5rem;
+}
 .product-filler {
     margin: 1rem 0 1.5rem;
 }

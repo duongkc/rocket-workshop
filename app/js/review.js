@@ -22,6 +22,7 @@ function getStarRating(rating) {
 
     // Set width of stars-inner to percentage
     $(".main-rating .stars-inner").width(starPRounded);
+    $(".star-rating .stars-inner").width("50%");
     // Add number rating
     $(".main-rating .number-rating").html(rating);
     return starPRounded;
