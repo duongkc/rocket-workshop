@@ -34,17 +34,31 @@ function setCartValues(cart) {
 function addCartItem(item){
     const div = document.getElementById("cart-content-id");
     div.innerHTML += `<div class="cart-item">
-    <img class="cart-img" src=${item.thumbnail} alt="product"/>
-    <div>
-    <h4> ${item.name} </h4>
-    <h5> ${formatToCurrency(item.total)} </h5>
-    <h6> ${item.top.name}, ${item.middle.name} and ${item.bottom.name}.</h6>
-    <span class = "remove-item" onclick="removeItem(${item.id})"> remove </span>
+    <div class="cart-thumbnail">
+        <img src=${item.top.thumbnail} alt="product"/>
+        <img src=${item.middle.thumbnail} alt="product"/>
+        <img src=${item.bottom.thumbnail} alt="product"/>
     </div>
     <div>
+    <h4> ${item.name} </h4>
+    <h6> ${item.top.name}, ${item.middle.name} and ${item.bottom.name}.</h6>
+    <span class = "remove-item" onclick="removeItem(${item.id})"> <i class="far fa-trash-alt"></i> remove </span>
+    </div>
+    <div>
+    <h6> <span style="color:green"> In stock.</span> Order before 23:59, shipped tomorrow.</h6>
+    </div>
+    <div class="amount-container">
+        <div>
+        Quantity:
+        </div>
+        <div>
         <i class="fas fa-chevron-up cart-up-icon" onclick="increaseItem(${item.id})"></i>
         <p class="item-amount"> ${item.amount} </p>
-        <i class="fas fa-chevron-down cart-down-icon" onclick="decreaseItem(${item.id})"> </i>
+        <i class="fas fa-chevron-down cart-down-icon" onclick="decreaseItem(${item.id})"> </i> <br>
+        </div>
+    </div>
+    <div>
+    <h6 class="item-price"> ${formatToCurrency(item.total * item.amount)} </h6>
     </div>
     </div>
     `
@@ -177,6 +191,8 @@ function calcShippingCost(planet){
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) { 
+                // Set shipping planet
+                document.getElementById("shipping-planet").innerHTML = planet;
                 // Set shipping path
                 var div = document.getElementById("shipping-path");
                 var response = xhr.responseText.split("\"");
@@ -197,7 +213,8 @@ function calcShippingCost(planet){
         xhr.open("GET", url, true);
         xhr.send(); 
     } else {
-        document.getElementById("shipping-path").innerHTML = homePlanet;
+        document.getElementById("shipping-planet").innerHTML = homePlanet;
+        document.getElementById("shipping-path").innerHTML = "-";
         document.getElementById("shipping-cost").innerHTML = formatToCurrency(0);
         document.getElementById("total-cost-incl").innerHTML = document.getElementById("cart-total").innerHTML;
     }
