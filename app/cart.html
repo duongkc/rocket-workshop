@@ -24,8 +24,8 @@
     </head>
 <body>
     <div class="main">
+        <!-- navbar -->
         <header id="header">
-            <!-- navbar -->
             <nav class="navbar navbar-expand-md navbar-dark bg-dark main-navbar">
                 <div class="container">
                     <div class="d-flex flex-grow-1">
@@ -60,39 +60,56 @@
                 </div>
             </nav>
         </header>
+        <!-- End of navbar -->
         <main id="main_content">
+            <!-- Main cart content-->
             <div class="container">
                 <div class="cart-overlay">
                     <div>
                         <h1> Your shopping cart</h1>
                     </div>
+                    <hr>
                     <div class="cart-content" id="cart-content-id">
-            
                     </div>
+                    <hr>
                     <div class="cart-footer-items">
-                        <h3> Total price: <span id="cart-total">0</span></h3>
-                        <h3> Total items: <span id="cart-amount">0</span></h3> 
+                        <div>
+                            <button class="fancy-btn" id="select-location-btn"> Select shipping location</button>
+                            Selected planet: <span id="shipping-planet"> </span> <br>
+                            Shipping path: <span id="shipping-path"> </span>
+                        </div>
+                        <p></p>
+                        <span class="clear-cart btn" onclick="clearCart()"> Clear cart <i class="far fa-trash-alt"></i></span>
+                        <div class="checkout-cost">
+                        <div>
+                            <h6> Total (<span id="cart-amount">0</span> items):</h6>
+                            <h6>Shipping cost:</h6>
+                        </div>
+                        <div>
+                            <h6 id="cart-total">0</h6> 
+                            <h6 id="shipping-cost" style="text-align: right;"> </h6>
+                        </div>
+                            <div>
+                                <hr>
+                                <h6>Total cost including shipping:</h6>
+                            </div>
+                            <div>
+                                <hr>
+                                <h6 id="total-cost-incl"> </h6>
+                            </div>
+                        </div>
                     </div>
                     <div>
                         
                     </div>
                     <div class="cart-footer-btns">
-                        <div>
-                            Shipping cost: <p id="shipping-cost"> </p>
-                            Shipping path: <p id="shipping-path"> </p>
-                            Total cost including shipping: <p id="total-cost-incl"> </p>
-                        </div>
-                        <button class="fancy-btn" id="select-location-btn"> Select shipping location</button>
-                        <span class="clear-cart btn" onclick="clearCart()"> Clear cart <i class="far fa-trash-alt"></i></span>
                         <button class="fancy-btn proceed-checkout-btn" onclick="proceedCheckout()"> Place order</button>
                     </div>
                     
                 </div>
             </div>
-
-            <div>
-                
-                
+            <!-- End of main cart content-->
+            <div> 
                 <!-- The Modal -->
                 <div id="myModal" class="modal">
                 <span class="close">&times;</span>
@@ -101,6 +118,7 @@
                 </div>    
             </div>
         </main>
+
         <!-- Footer -->
         <footer class="text-center text-lg-start bg-dark text-white">
             <!-- Section: Social media -->

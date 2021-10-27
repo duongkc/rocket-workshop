@@ -8,42 +8,8 @@
     --mainTransition: all 0.3s linear;
 }
 
-.cart-img {
-    width: 150px;
-    height: 150px;
-}
-
-.remove-item {
-    color: grey;
-    cursor: pointer;
-}
-
-.cart-item {
-    display: grid;
-    align-items: center;
-    grid-template-columns: auto 1fr 1fr;
-    grid-column-gap: 1.5rem;
-    margin: 1.5rem 0;
-}
-
-.cart-footer-items{
-    display: grid;
-    align-items: center;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 1.5rem;
-    margin: 1.5rem 0;
-}
-.cart-footer-btns{
-    display: grid;
-    align-items: center;
-    grid-template-columns:  1fr 1fr;
-    column-gap: 60%;
-    margin: 0% 10% 0% 0%;
-}
-
-.cart-up-icon,
-.cart-down-icon {
-    cursor: pointer;
+h1{
+    margin-top: 1rem;
 }
 
 .fancy-btn {
@@ -56,7 +22,68 @@
     border: 1px solid var(--primaryColor);
     transition: var(--mainTransition);
     cursor: pointer;
-    margin: 1rem;
+    margin-bottom: 1rem;
+}
+
+.cart-item {
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto repeat(4, 1fr);
+    grid-column-gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.cart-thumbnail{
+    background-color: #fff;
+    width: 142px;
+    height: 142px;
+}
+
+.cart-thumbnail img {
+    position: absolute;
+    width: 142px;
+    height: 142px;
+}
+
+.remove-item {
+    color: grey;
+    cursor: pointer;
+}
+
+.amount-container{
+    display: grid;
+    grid-template-columns: 50px 75px;
+    align-items: center;
+    text-align: center;
+}
+
+.cart-up-icon,
+.cart-down-icon {
+    cursor: pointer;
+}
+
+.item-price{
+    text-align: right;
+}
+
+.cart-footer-items{
+    display: grid;
+    align-items: start;
+    grid-template-columns: repeat(3, 1fr) auto;
+    grid-column-gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.cart-footer-btns{
+    text-align: right;
+}
+
+.checkout-cost{
+    display: grid;
+    align-items: right;
+    grid-template-columns: repeat(2, auto);
+    grid-column-gap: 1.5rem;
+    margin: 1.5rem 0;
 }
 
 /* Style of Modal */
@@ -147,7 +174,9 @@
     }
 }
 
-/* Dropdown menu */
+/* End Style of Model */
+
+/* Style of Dropdown Menu */
 
 .dropbtn {
     background-color: var(--primaryColor);
@@ -180,6 +209,8 @@
 .dropdown-content a:hover {background-color: white;}
 .dropdown:hover .dropdown-content {display: block;}
 .dropdown:hover .dropbtn {background-color: grey;}
+
+/* End Style of Dropdown Menu */
 
 .confirm-btn {
     padding: 1rem 3rem;
