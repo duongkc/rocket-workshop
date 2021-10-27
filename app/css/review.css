@@ -24,40 +24,92 @@
     color: #f8ce0b;
 }
 
-.review-header {
-    /* display: grid; */
-    /* grid-template-columns: 1fr 2fr 1fr; */
-    /* justify-content: stretch; */
-    /* display: inline-block; */
+#review_header_title {
+    font-weight: bold;
 }
 
 .review-header .number-rating {
-    /* display: inline; */
     font-size: 5rem;
     margin: auto;
-    /* text-align: center; */
 }
 
 .main-stars {
     align-items: center;
     
 }
+
 .review-header .stars-outer {
-    /* grid-column: 2; */
-    /* grid-row: 1; */
-    /* display: inline; */
     font-size: 2rem;
-    /* vertical-align: middle; */
     position: relative;
     top: 50%;
     transform: translateY(-50%);
-
 }
 
 .review-count {
     font-size: 1.5rem;
     margin: auto;
+}
 
+.product-review {
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+    border-top: 1px dotted #e6e6e6;
+}
+
+.product_review_header * {
+    font-weight: bold;
+    display: inline-block;
+}
+
+.metadata-item {
+    display: inline;
+    color: grey;
+}
+
+.metadata-item::after {
+    
+    content: ' \|';
+    box-sizing: inherit;
+}
+
+.metadata-item:last-of-type:after {
+    content: '';
+}
+
+.pros-and-cons {
+    margin-top: 0.5rem;
+}
+
+.procon-list {
+    list-style: none;
+    padding: 0;
+}
+
+.procon-list li {
+    padding-left: 1.3em;
 }
 
 
+.pros-list li::before {
+    content: "\f067";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    display: inline-block;
+    margin-left: -1.3em; /* same as padding-left set on li */
+    width: 1.3em; /* same as padding-left set on li */
+    color: #23e253;
+}
+
+.cons-list li::before {
+    content: "\f068";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    display: inline-block;
+    margin-left: -1.3em; /* same as padding-left set on li */
+    width: 1.3em; /* same as padding-left set on li */
+    color: #e22323;
+}
+
+.review-description {
+    text-align: justify;
+}

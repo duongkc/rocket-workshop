@@ -21,7 +21,7 @@ function loadProducts(products) {
                 
             </article>
         `
-    })
+    });
     $('.products-center').append(productCode);
 }
 
