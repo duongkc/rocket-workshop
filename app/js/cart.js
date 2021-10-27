@@ -70,7 +70,11 @@ class UI {
         div.classList.add("cart-item");
         div.innerHTML = `<!-- cart item -->
                 <!-- item image -->
-                <img src="` + item.thumbnail + `" alt="product" />
+                <div class="cart-thumbnail">
+                    <img src=${item.top.thumbnail} alt="product" />
+                    <img src=${item.middle.thumbnail} alt="product" />
+                    <img src=${item.bottom.thumbnail} alt="product" />
+                </div>
                 <!-- item info -->
                 <div>
                     <h4>${item.name}</h4>

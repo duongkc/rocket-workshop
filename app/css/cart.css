@@ -94,7 +94,13 @@ p{
     grid-column-gap: 1.5rem;
     margin: 1.5rem 0;
 }
-.cart-item img {
+.cart-thumbnail {
+    background: #fff;
+    width: 142px;
+    height: 142px;
+}
+.cart-thumbnail img {
+    position: absolute;
     width: 142px;
     height: 142px;
 }
