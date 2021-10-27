@@ -160,37 +160,32 @@ function selectPlanet(planet){
 
 function confirmLocation(){
     planet = document.getElementById("dropbtn").innerHTML;
-    shortestPath(planet);
     calcShippingCost(planet);
     modal.style.display = "none"
 }
 // Shipping cost part
-function calcShippingCostv0(planet){
-    let cost = 0;
-    let pathVar = "test";
-    if(planet != "F"){
-
-        pathVar = document.getElementById("shipping-path").innerHTML;
-        console.log((pathVar.match(/>/g)||[]).length);
-    }
-    let cartCost = Number(document.getElementById("cart-total").innerHTML.replace(/[^0-9.-]+/g,""));
-    document.getElementById("shipping-cost").innerHTML = formatToCurrency(cost);
-    document.getElementById("total-cost-incl").innerHTML = formatToCurrency(cost + cartCost);
-}
-
+var homePlanet = "F";
 function calcShippingCost(planet){
     let cost = 0;
-    let pathVar = "test";
-    if(planet != "F"){
-        var start = "F";
+    if(planet != homePlanet){
         var eind = planet;
-        var url = "https://spacetruckers2.azurewebsites.net/GetPath?from=" + start + "&to=" + eind;
+        var url = "https://spacetruckers2.azurewebsites.net/GetPath?from=" + homePlanet + "&to=" + eind;
         console.log(url);
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) { 
-                pathVar = xhr.responseText;
-                cost = (pathVar.match(/>/g)||[]).length * 15000;
+                // Set shipping path
+                var div = document.getElementById("shipping-path");
+                var response = xhr.responseText.split("\"");
+                div.innerHTML = "";
+                for (let i = 3; i < response.length - 2; i += 2){
+                    div.innerHTML += response[i] + " -> ";
+                }
+                div.innerHTML += response[response.length - 2];
+                
+                // Calculate shipping cost
+                var pathLength = response[1];
+                cost = pathLength * 5000;
                 let cartCost = Number(document.getElementById("cart-total").innerHTML.replace(/[^0-9.-]+/g,""));
                 document.getElementById("shipping-cost").innerHTML = formatToCurrency(cost);
                 document.getElementById("total-cost-incl").innerHTML = formatToCurrency(cost + cartCost);
@@ -199,24 +194,8 @@ function calcShippingCost(planet){
         xhr.open("GET", url, true);
         xhr.send(); 
     } else {
+        document.getElementById("shipping-path").innerHTML = homePlanet;
         document.getElementById("shipping-cost").innerHTML = formatToCurrency(0);
         document.getElementById("total-cost-incl").innerHTML = document.getElementById("cart-total").innerHTML;
     }
-}
-
-
-function shortestPath(eind) {
-    var start = "F";
-    var url = "https://spacetruckers2.azurewebsites.net/GetPath?from=" + start + "&to=" + eind;
-    console.log(url);
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) { 
-            var div = document.getElementById("shipping-path");
-            div.innerHTML = xhr.responseText;
-            result = div.innerHTML;
-        }
-    }
-    xhr.open("GET", url, true);
-    xhr.send();
 }
