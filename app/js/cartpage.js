@@ -209,7 +209,7 @@ function calcShippingCost(planet){
                 
                 // Calculate shipping cost
                 var pathLength = response[1];
-                cost = pathLength * 5000;
+                cost = pathLength * 5000 + 2000;
                 let cartCost = Number(document.getElementById("cart-total").innerHTML.replace(/[^0-9.-]+/g,""));
                 document.getElementById("shipping-cost").innerHTML = formatToCurrency(cost);
                 document.getElementById("total-cost-incl").innerHTML = formatToCurrency(cost + cartCost);
@@ -220,7 +220,7 @@ function calcShippingCost(planet){
     } else {
         document.getElementById("shipping-planet").innerHTML = homePlanet;
         document.getElementById("shipping-path").innerHTML = "-";
-        document.getElementById("shipping-cost").innerHTML = formatToCurrency(0);
+        document.getElementById("shipping-cost").innerHTML = formatToCurrency(2000);
         document.getElementById("total-cost-incl").innerHTML = document.getElementById("cart-total").innerHTML;
     }
 }
