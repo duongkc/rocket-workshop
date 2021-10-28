@@ -1,0 +1,9 @@
+.success-container {
+    margin: 2rem auto;
+    text-align: center;
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

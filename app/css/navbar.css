@@ -23,3 +23,18 @@
     color: #fff;
 
 }
+.navbar-brand {
+    align-items: center;
+    display: flex;
+}
+
+.navbar-brand i {
+    color: #f09d51;
+}
+
+#brand_text {
+    /* color: #f09d51; */
+    margin: auto 0.5rem;
+    font-weight: 900;
+    font-size: larger;
+}
