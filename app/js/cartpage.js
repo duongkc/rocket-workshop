@@ -122,7 +122,10 @@ function findIdx(cart, id){
 function proceedCheckout(){
     if(document.getElementById("shipping-cost").innerHTML == " "){
         alert("Please first select a planet to ship your order to.")
-    } else {
+    } else if (parseInt($("#cart-amount").text()) == 0 ){
+        alert("Your cart is empty");
+    } 
+    else {
         // alert("You have succesfully placed an order. Your rockets will arrive shortly.");
         window.location.href = "success.html";
         clearCart();
