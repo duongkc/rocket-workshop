@@ -7,7 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <!-- FontAwesome icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -17,19 +17,19 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/cart.css">
     <link rel="stylesheet" href="css/frontpage.css">
+    <link rel="stylesheet" href="css/success.css">
 
-    <title>Welcome to Spaceshop!</title>
+    <title>Order successful!</title>
 
     <!-- JS libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- Own JS -->
     <script src="js/shop.js"></script>
-    <script src="js/frontpage.js"></script>
-
 </head>
 <body>
     <div class="main">
+        <!-- navbar -->
         <header id="header">
             <!-- navbar -->
             <nav class="navbar navbar-expand-md navbar-dark bg-dark main-navbar">
@@ -61,36 +61,11 @@
                 </div>
             </nav>
         </header>
-        <main>
-            <div>
-                <div class="hero">
-                    <div class="banner">
-                        <h1 class="banner-title">Welcome to SpaceShop!</h1>
-                        <button class="banner-btn" onclick="moveDown()">shop now</button>
-                    </div>
-                </div>
-                <section class="products">
-                    <div class="section-title">
-                        <h2>OUR PRODUCTS</h2>
-                    </div>
-                    <div class="products-center" id="products_center">
-                        <!-- single product -->
-                        <!-- <article class="product">
-                            <div class="img-container">
-                                <a href="rocket.html" >
-                                    <img
-                                    src="./img/rocketthumbnail.png"
-                                    alt="product"
-                                    class="product-img"
-                                />
-                                </a>
-                            </div>
-                            <h3>Rocket</h3>
-                        </article> -->
-                        <!-- end of single product -->
-                        
-                    </div>
-                </section>
+        <!-- End of navbar -->
+        <main id="main-content">
+            <div class="container success-container">
+                <h1>Order successful!</h1>
+                <h3>You have successfully placed an order. Your rocket(s) will be shipped shortly.</h3>
             </div>
         </main>
         <!-- Cart -->
@@ -112,7 +87,7 @@
 
         </div>
         <!-- Footer -->
-        <footer class="text-center text-lg-start bg-dark text-white">
+        <footer class="text-center text-lg-start bg-dark text-white ">
             <!-- Section: Social media -->
             <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
 
@@ -134,7 +109,6 @@
                                 Customize and order your very own spaceship! 
                                 Team Rocket blasts off at the speed of light!
                                 Surrender now, or prepare to fight!
-                                Meowth! That's right!
                             </p>
                         </div>
                         <!-- Grid column -->
@@ -208,7 +182,6 @@
         </footer>
         <!-- End of Footer -->
     </div>
-
 
 
     <!-- Own JS -->
