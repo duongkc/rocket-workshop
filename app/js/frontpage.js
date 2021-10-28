@@ -21,7 +21,7 @@ function loadProducts(products) {
                 
             </article>
         `
-    })
+    });
     $('.products-center').append(productCode);
 }
 
@@ -34,7 +34,6 @@ function fetchProducts() {
         dataType: "json",
         data: {},
         success: function (data) {
-            console.log(data);
             loadProducts(data);
         },
         error: function(xhr, desc, err) {

@@ -14,7 +14,9 @@ function loadJson(){
         data: {},
         success: function (data) {
             json = {rocket: data}
+            $("#series_name").html(json.rocket.name);
             loadParts();
+            generateReviews();
         },
         error: function(xhr, desc, err) {
             console.log("Failed to retrieve data from DB");

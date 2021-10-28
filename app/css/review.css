@@ -1,0 +1,115 @@
+.stars-outer {
+    position: relative;
+    display: inline-block;
+}
+.stars-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+}
+
+.stars-outer::before{
+    content: "\f005" "\f005" "\f005" "\f005" "\f005";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: #ccc;
+}
+.stars-inner::before{
+    content: "\f005" "\f005" "\f005" "\f005" "\f005";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: #f8ce0b;
+}
+
+#review_header_title {
+    font-weight: bold;
+}
+
+.review-header .number-rating {
+    font-size: 5rem;
+    margin: auto;
+}
+
+.main-stars {
+    align-items: center;
+    
+}
+
+.review-header .stars-outer {
+    font-size: 2rem;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.review-count {
+    font-size: 1.5rem;
+    margin: auto;
+}
+
+.product-review {
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+    border-top: 1px dotted #e6e6e6;
+}
+
+.product_review_header * {
+    font-weight: bold;
+    display: inline-block;
+}
+
+.metadata-item {
+    display: inline;
+    color: grey;
+}
+
+.metadata-item::after {
+    
+    content: ' \|';
+    box-sizing: inherit;
+}
+
+.metadata-item:last-of-type:after {
+    content: '';
+}
+
+.pros-and-cons {
+    margin-top: 0.5rem;
+}
+
+.procon-list {
+    list-style: none;
+    padding: 0;
+}
+
+.procon-list li {
+    padding-left: 1.3em;
+}
+
+
+.pros-list li::before {
+    content: "\f067";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    display: inline-block;
+    margin-left: -1.3em; /* same as padding-left set on li */
+    width: 1.3em; /* same as padding-left set on li */
+    color: #23e253;
+}
+
+.cons-list li::before {
+    content: "\f068";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    display: inline-block;
+    margin-left: -1.3em; /* same as padding-left set on li */
+    width: 1.3em; /* same as padding-left set on li */
+    color: #e22323;
+}
+
+.review-description {
+    text-align: justify;
+}
