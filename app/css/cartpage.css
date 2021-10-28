@@ -62,6 +62,10 @@ h1{
     cursor: pointer;
 }
 
+.item-amount{
+    margin-bottom: 0;
+}
+
 .item-price{
     text-align: right;
 }
