@@ -27,7 +27,7 @@ function loadProducts(products) {
 
 function fetchProducts() {
 
-    let url = "https://spaceshop-backend.azurewebsites.net/maininfo"
+    let url = "https://spaceshop-back.azurewebsites.net/maininfo"
     $.ajax({
         type: "GET",
         url: url,

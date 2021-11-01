@@ -6,7 +6,7 @@ function loadJson(){
 
     let searchParams = new URLSearchParams(window.location.search);
     let id = searchParams.get("id");
-    let url = "https://spaceshop-backend.azurewebsites.net/rocketbyid/" + id;
+    let url = "https://spaceshop-back.azurewebsites.net/rocketbyid/" + id;
     $.ajax({
         type: "GET",
         url: url,
